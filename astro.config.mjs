@@ -7,7 +7,8 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
     output: 'static',
     trailingSlash: 'always',
-    site: 'https://codejones.me',
+    site: 'https://code-jones.github.io',
+    base: '/',
 
     // Single page, no prefetch needed
     prefetch: false,

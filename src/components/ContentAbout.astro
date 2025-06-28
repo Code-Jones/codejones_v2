@@ -1,5 +1,5 @@
 ---
-import { Code } from 'astro:components';
+import { Code } from "astro:components";
 
 const code = `interface Developer {
     name: string;
@@ -13,44 +13,46 @@ interface TechStack {
    frontend: string[];
 };
 
-type ContactType = 'github' | 'twitter' | 'linkedIn' | 'xing' | 'email';
+type ContactType = 'github' | 'linkedIn' | 'email';
 
 const techStack: TechStack = {
     devOps: [
-        'GitLab',
-        'GitHub',
-        'Cloudflare',
-        'Docker'
+        'Git',
+        'GitLab CI/CD',
+        'Jenkins',
+        'Docker',
+        'AWS (S3, Lambda)',
+        'Jira',
+        'Confluence'
     ],
     frontend: [
-        'Angular',
         'JavaScript',
         'TypeScript',
-        'TailwindCSS',
-        'PrimeNG',
-        'Astro',
-        'Ionic',
-        'Stencil',
-        'Capacitor',
+        'React',
+        'Angular',
         'SCSS',
-        'Markdown',
-        'WordPress'
+        'TailwindCSS'
     ],
     backend: [
-        'Supabase',
+        'Java',
+        'Spring Boot',
+        'Spring MVC',
+        'Hibernate',
+        'Go',
+        'Pocketbase',
+        'Python',
         'Node.js',
-        'Bun',
-        'Deno',
+        'Kafka',
         'PostgreSQL',
         'MySQL',
-        'S3 Storage',
-        'Resend'
+        'Oracle',
+        'MongoDB'
     ]
 };
 
 // Developer profile
 const me: Developer = {
-    name: 'Dejan Vi.',
+    name: 'Matt Jones',
     skills: [
         ...techStack.devOps,
         ...techStack.backend,
@@ -59,10 +61,10 @@ const me: Developer = {
     interests: [
         'Open Source',
         'Security',
-        'Privacy',
         'Performance',
-        'Self-Hosting',
-        'Networking'
+        'Distributed Systems',
+        'Real-time Data',
+        'System Design'
     ]
 };
 
@@ -70,31 +72,23 @@ const me: Developer = {
 const contact = (type: ContactType): string => {
     switch (type) {
         case 'github':
-            return 'https://github.com/devidevio';
-        case 'twitter':
-            return 'https://x.com/devidev_io';
+            return 'https://github.com/Code-Jones';
         case 'linkedIn':
-            return 'https://www.linkedin.com/in/dejan-vi';
-        case 'xing':
-            return 'https://www.xing.com/profile/Dejan_Vintonjiv';
+            return 'https://www.linkedin.com/in/matt-jones-developer/';
+       
         case 'email':
-            return 'hi@devidev.io';
+            return 'hi@codejones.personal@gmail.com';
         default:
-            return 'Send fax.';
+            return 'Send telegram.';
     }
 };
 
 `;
 ---
 
-<Code
-    code={code}
-    lang="js"
-    wrap={true}
-/>
+<Code code={code} lang="js" wrap={true} />
 
 <style is:global>
-
     /* Custom styling for code block line numbers */
     pre.astro-code {
         @apply bg-transparent !important;
@@ -115,5 +109,4 @@ const contact = (type: ContactType): string => {
         counter-increment: step;
         @apply text-gray-600 pr-2;
     }
-
 </style>
